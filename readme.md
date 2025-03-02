@@ -1,4 +1,4 @@
-# Project Name
+# Algo_Mentor
 
 ## Setup Instructions
 
