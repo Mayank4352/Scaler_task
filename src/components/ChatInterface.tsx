@@ -51,7 +51,7 @@ const ChatInterface = () => {
   return (
     <div className="chat-page">
       <div className="chat-container">
-        <div className="logo-container center-content">
+        <div className="logo-container ">
           <Brain size={32} className="text-indigo-300" />
           <Sparkles size={24} className="text-indigo-300" />
         </div>
@@ -70,12 +70,11 @@ const ChatInterface = () => {
         
         <div className="messages-container">
           {messages.length === 0 && (
-            <div className="flex flex-col items-center justify-center h-full text-indigo-300 opacity-70">
+            <div className="empty-state">
               <Brain size={48} className="mb-4" />
               <p>Ask me anything about algorithms and data structures!</p>
             </div>
           )}
-          
           {messages.map((message, index) => (
             <div
               key={index}
