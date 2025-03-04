@@ -1,4 +1,3 @@
-// Real API service for AI responses
 export const getAIResponse = async (leetCodeUrl: string, question: string): Promise<string> => {
   try {
     const response = await fetch("http://localhost:5000/ask", {

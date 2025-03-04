@@ -23,14 +23,12 @@ app.post("/ask", async (req, res) => {
     Problem URL: ${problemUrl}
     Question: ${userQuestion}`;
 
-    // 🔹 Use the correct model name
     const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-pro" });
 
     const result = await model.generateContent({
       contents: [{ parts: [{ text: prompt }] }]
     });
 
-    // 🔹 Extract response safely
     const response = result.response;
     const text = response?.candidates?.[0]?.content?.parts?.[0]?.text || "No response from AI.";
 
@@ -38,7 +36,6 @@ app.post("/ask", async (req, res) => {
   } catch (error) {
     console.error("Error:", error);
 
-    // 🔹 Provide detailed error messages
     res.status(500).json({
       error: "Internal Server Error",
       details: error.message || "Unknown error occurred."
